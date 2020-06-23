@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block body_block %}
+  <div class="container">
+    <div class="jumbotron">
+    {% if user.is_superuser %}
+      {% if registered %}
+        <h1>well registering!</h1>
+      {% else %}
+        <h1>ADD USER</h1>
+        
+
+        <form enctype="multipart/form-data" method="POST"  novalidate> 
+        <div class="form-group">
+         {% csrf_token %}
+          <div class="row">
+        
+          <div class="col-6">
+          {{ user_form.first_name|as_crispy_field }}
+          </div>
+          <div class="col-6">
+          {{ user_form.last_name|as_crispy_field }}
+          </div>
+           <div class="col-6">
+          {{ user_form.username|as_crispy_field }}
+          </div>
+           <div class="col-6">
+          {{ user_form.email|as_crispy_field }}
+          </div>
+          
+           <div class="col-6">
+          {{ user_form.password|as_crispy_field }}
+          </div>
+          <div class="col-6">
+          {{ profile_form.as_p}}
+          </div>
+          
+          </div>
+          <button type="submit" class="btn btn-primary">Save person</button>
+          </div>
+        </div>
+        </form>
+
+      {% endif %}
+    {% endif %}
+    </div>
+
+  </div>
+
+{% endblock %}

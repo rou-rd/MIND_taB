@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block body_block %}
+
+
+ <h1 class="h3 mb-2 text-gray-800">Tables</h1>
+          <p class="mb-4">List of USers </p>
+
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">DATA</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>users</th>
+                      <th>is_manager</th>
+                      <th>is_consultant</th>
+                
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>users</th>
+                      <th>is_manager</th>
+                      <th>is_consultant</th>
+                    
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    {% for users in object_list %}
+                    <tr>
+                      <td>{{ users.user }}</td>
+                      <td>{{ users.is_manager }}</td>
+                      <td>{{ users.is_consultant }}</td>
+                     
+
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          </div>
+        <!-- /.container-fluid -->
+{% endblock %}

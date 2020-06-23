@@ -1,0 +1,45 @@
+
+{% extends "base.html" %}
+{% block body_block %}
+
+
+
+<div class="container">
+  <div class="jumbotron">
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">report of Application</th>
+          <th scope="col">Name of Application</th>
+          <th scope="col">Url of Application</th>
+          <th scope="col">Ip of Application</th>
+          <th scope="col">Description</th>
+          <th scope="col">Type</th>
+          <th scope="col">Manager</th>
+          <th scope="col">Manager</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for application in object_list %}
+        <tr>
+
+          <th scope="row">{{ application.report_id_application }}</th>
+          <td>{{ application.name_of_application }}</td>
+          <td>{{ application.url_of_application }}</td>
+          <td>{{ application.ip_of_application }}</td>
+          <td>{{ application.description }}</td>
+          <td>{{ application.type }}</td>
+          <td><a href="{% url 'application:application_edit'  application.id  %}" class="btn btn-default">Edit</a></td>
+          <td><a href="{% url 'application:application_delete'  application.id  %}" class="btn btn-default">delete</a></td>
+
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

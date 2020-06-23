@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block body_block %}
+<div class="container">
+  <div class="jumbotron">
+
+
+    <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <form>
+             <div class="form-group row">
+                   <label for="chaine" class="col-sm-2 col-form-label">Key Word</label>
+                  <div class="col-sm-8">
+                     <input type="text" class="form-control" id="chaine" placeholder="">
+                   </div>
+             
+                    <div class="col-sm-2">
+                    <button type="submit" class="btn btn-primary" id="modifier">Modifier</button>
+                    </div>
+              </div>
+          </form>
+          <br/>
+            <form id="confi">
+               <p>
+                  Le système est automatisé  :<br />
+                  <br/>
+                   <input type="radio" name="config" id="day" /> <label for="Everyday">Everyday</label><br />
+                   <input type="radio" name="config" id="week" /> <label for="Everyweek">Everyweek</label><br />
+                   <input type="radio" name="config" id="month" /> <label for="Everymonth">Everymonth</label><br />
+                   
+               </p>
+               <button type="button" class="btn btn-primary" id="okay">Done</button>
+
+            </form>
+              <script src="js/config.js"></script>
+      </div>
+
+
+</div>
+</div>
+
+{% endblock %}
+    
+
+
+

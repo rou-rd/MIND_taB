@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block body_block %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+<div class="container">
+  <div class="jumbotron">
+   	<form method="post">
+   		 {% csrf_token %}
+   		 {% crispy form %}
+   		{{ form.as_p }}
+   		<button type="submit">SAVE</button>
+   	</form>
+  </div>
+</div>
+
+{% endblock %}

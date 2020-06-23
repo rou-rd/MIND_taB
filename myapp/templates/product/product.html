@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block body_block %}
+
+
+ <h1 class="h3 mb-2 text-gray-800">Tables</h1>
+          <p class="mb-4">List of product </p>
+
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">DATA</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Name of Product</th>
+                      <th>Name of domain</th>
+                      <th>Price</th>
+                      <th>DATE</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Name of Product</th>
+                      <th>Name of domain</th>
+                      <th>Price</th>
+                      <th>DATE</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                   {% block content %}
+                    {% for i in datas.datas %}
+                    <tr>
+                      <td>{{ i.name_product}}</td>
+                      <td>{{ i.product }}</td>
+                      <td>{{ i.price }}</td>
+                      <td>{{ i.date }}</td>
+                    </tr>
+                   {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          </div>
+        <!-- /.container-fluid -->
+        {% endblock %}
+{% endblock %}
